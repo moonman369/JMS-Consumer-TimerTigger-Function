@@ -11,7 +11,7 @@ namespace JMS_Consumer_TimerTigger_Function
     public class JMSConsumerTimerTiggerFunction
     {
         [FunctionName("JMSConsumerTimerTiggerFunction")]
-        public async Task Run([TimerTrigger("*/40 * * * * *")] TimerInfo myTimer, ILogger log)
+        public async Task Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILogger log)
         {
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
 
@@ -21,6 +21,8 @@ namespace JMS_Consumer_TimerTigger_Function
             {
                 log.LogInformation(fetchedMessage.Text);
             }
+
+            log.LogInformation($"\n===================\n|    Count : {fetchedMessages.Count}    |\n===================");
         }
     }
 }

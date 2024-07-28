@@ -123,7 +123,6 @@ namespace JMS_Consumer_TimerTigger_Function.Utils.MQFunctions
 
                         while (true)
                         {
-                            System.Console.WriteLine("hello");
                             IMessage message = consumer.Receive(TimeSpan.FromSeconds(10));
 
                             // System.Console.WriteLine(message);
